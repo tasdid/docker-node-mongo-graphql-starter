@@ -1,0 +1,21 @@
+version: '3'
+services:
+  mongo:
+    image: mongo
+    # volumes:
+    #   - ./db:/data/db
+    ports:
+      - "27017:27017"
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports: 
+      - "4000:4000"
+    volumes:
+      - /app/node_modules
+      - .:/app
+    depends_on:
+      - mongo
+  
+#  In our docker-compose.yml we have added 'database' as a name to our MongoDB service. Now, we can use this as a reference while connecting to MongoDB. So in our index.js we can change mongoose.connect('localhost:27017/myapp') to mongoose.connect('database:27017/myapp')
