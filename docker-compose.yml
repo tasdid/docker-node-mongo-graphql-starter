@@ -3,7 +3,7 @@ services:
   mongo:
     image: mongo
     # volumes:
-    #   - ./db:/data/db
+    #   - ./db:/data/db # uncomment this line for database persistency
     ports:
       - "27017:27017"
   server:
