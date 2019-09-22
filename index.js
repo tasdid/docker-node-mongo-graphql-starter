@@ -98,7 +98,14 @@ app.listen({ port: 4000 }, () =>
 
 // MongoDB setup
 // docker run -p 27017:27017 mongo
+// docker exec -it containerID sh
+// ctrl+d to quit shell
 // mongod --config /usr/local/etc/mongod.conf
+
+// docker container stats (performance stats for all containers)
+// docker container top (process list in one container)
+// docker container inspect (details of one container config)
+
 
 // # docker image prune -a
 // # docker image prune
@@ -109,7 +116,8 @@ app.listen({ port: 4000 }, () =>
 
 // docker system prune -a --volumes
 // docker network prune
-// docker-compose up --build  
+// docker-compose up --build  (-d for detach)
+// docker-compose down
 
 // Volumes allow you to mount folders on the host machine to folders in the container. Meaning, when something inside the container refers to a folder, it will actually be accessing a folder on the host machine. This is especially helpful for database containers because containers are meant to be disposable. With a mount to the physical folder on the host machine, you’ll be able to destroy a container and rebuild it and the data files for the container will still be there on the host machine. So add a volume tag in the db section mounting the /data/db folder in the container (where Mongo stores its data) to the db folder in your application’s root folder
 
