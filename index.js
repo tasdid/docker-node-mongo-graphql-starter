@@ -102,9 +102,11 @@ app.listen({ port: 4000 }, () =>
 // ctrl+d to quit shell
 // mongod --config /usr/local/etc/mongod.conf
 
-// docker container stats (performance stats for all containers)
-// docker container top (process list in one container)
-// docker container inspect (details of one container config)
+
+// docker container stats containerID(performance stats for all containers)
+// docker container top containerID(process list in one container)
+// docker container inspect containerID(details of one container config)
+// docker inspect mongo
 
 
 // # docker image prune -a
